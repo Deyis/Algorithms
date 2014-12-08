@@ -7,15 +7,8 @@ public class TestApp {
 
     public static void main(String[] args) {
 
-        QueueTestWrapper testWrapper = new QueueTestWrapper(NodeQueue<Integer>::new);
-        testWrapper.testLogic();
-        testWrapper.testIteratorFunctionality();
-        testWrapper.testClonedIteratorFunctionality();
-
-        testWrapper = new QueueTestWrapper(ArrayQueue<Integer>::new);
-        testWrapper.testLogic();
-        testWrapper.testIteratorFunctionality();
-        testWrapper.testClonedIteratorFunctionality();
+        new QueueTestWrapper(NodeQueue<Integer>::new).runFullTest();
+        new QueueTestWrapper(ArrayQueue<Integer>::new).runFullTest();
 
     }
 

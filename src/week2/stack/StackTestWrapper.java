@@ -1,6 +1,7 @@
 package week2.stack;
 
 import util.Producer;
+import util.TestMethod;
 import util.TestWrapper;
 
 /**
@@ -15,18 +16,21 @@ public class StackTestWrapper extends TestWrapper {
         this.producer = producer;
     }
 
+    @TestMethod
     public void testClonedStackIteratorFunctionality() {
         initStack();
         testStackIteratorFunctionality(stack.clone());
         assertTrue(!stack.isEmpty());
     }
 
+    @TestMethod
     public void testStackIteratorFunctionality() {
         initStack();
         testStackIteratorFunctionality(stack);
         assertTrue(stack.isEmpty());
     }
 
+    @TestMethod
     public void testStackLogic() {
         initStack();
         validateStack();

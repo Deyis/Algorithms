@@ -1,6 +1,7 @@
 package week2.queue;
 
 import util.Producer;
+import util.TestMethod;
 import util.TestWrapper;
 
 /**
@@ -16,18 +17,20 @@ public class QueueTestWrapper extends TestWrapper {
         this.producer = producer;
     }
 
+    @TestMethod
     public void testLogic() {
         initQueue();
         validateQueue();
     }
 
+    @TestMethod
     public void testClonedIteratorFunctionality() {
         initQueue();
         testIteratorFunctionality(queue.clone());
         assertTrue(!queue.isEmpty());
     }
 
-
+    @TestMethod
     public void testIteratorFunctionality() {
         initQueue();
         testIteratorFunctionality(queue);

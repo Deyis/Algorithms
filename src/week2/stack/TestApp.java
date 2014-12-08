@@ -9,20 +9,9 @@ public class TestApp {
 
     public static void main(String[] args) {
 
-        StackTestWrapper testWrapper = new StackTestWrapper(NodeStack<Integer>::new);
-        testWrapper.testStackLogic();
-        testWrapper.testStackIteratorFunctionality();
-        testWrapper.testClonedStackIteratorFunctionality();
-
-        testWrapper = new StackTestWrapper(() -> new ArrayStack<>(10));
-        testWrapper.testStackLogic();
-        testWrapper.testStackIteratorFunctionality();
-        testWrapper.testClonedStackIteratorFunctionality();
-
-        testWrapper = new StackTestWrapper(ResizingArrayStack<Integer>::new);
-        testWrapper.testStackLogic();
-        testWrapper.testStackIteratorFunctionality();
-        testWrapper.testClonedStackIteratorFunctionality();
+        new StackTestWrapper(NodeStack<Integer>::new).runFullTest();
+        new StackTestWrapper(() -> new ArrayStack<>(10)).runFullTest();
+        new StackTestWrapper(ResizingArrayStack<Integer>::new).runFullTest();
 
     }
 
