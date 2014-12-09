@@ -6,28 +6,12 @@ package week1;
 public class TestApi {
 
     public static void main(String[] args) {
-        int N = StdIn.readInt();
-        UF uf = new QuickFindUF(N);
-        while (!StdIn.isEmpty()) {
-            int p = StdIn.readInt();
-            int q = StdIn.readInt();
-            if (!uf.isConnected(p, q)) {
-                uf.union(p,q);
-                System.out.println(p +"  "+ q);
-            }
-        }
 
-        System.out.println("---------------------------------------------");
-        StdIn.reset();
-        N = StdIn.readInt();
-        uf = new QuickUnionUF(N);
-        while (!StdIn.isEmpty()) {
-            int p = StdIn.readInt();
-            int q = StdIn.readInt();
-            if (!uf.isConnected(p, q)) {
-                uf.union(p,q);
-                System.out.println(p +"  "+ q);
-            }
-        }
+        int N = StdInForUF.readSize();
+
+        new UFTestWrapper(()-> new QuickFindUF(N)).runAllTests();
+        new UFTestWrapper(()-> new QuickUnionUF(N)).runAllTests();
+        new UFTestWrapper(()-> new QuickUnionImprUF(N)).runAllTests();
+
     }
 }

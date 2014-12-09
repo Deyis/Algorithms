@@ -3,10 +3,9 @@ package week1;
 /**
  * Created by Denis_Ivanchenko on 12/4/2014.
  */
-public class StdIn {
+public class StdInForUF {
 
     private static int[] array = {
-            10,
             4, 3,
             3, 8,
             6, 5,
@@ -20,6 +19,11 @@ public class StdIn {
             6, 7
     };
 
+    private static int[][] connected = {
+            {4, 3, 8, 9},
+            {6, 5, 0, 2, 1, 7}
+    };
+
     private static int currentIndex = 0;
 
     public static void reset() {
@@ -30,6 +34,13 @@ public class StdIn {
         return array[currentIndex++];
     }
 
+    public static int readSize() {
+        return 10;
+    }
+
+    public static int[][] getConnected() {
+        return connected;
+    }
 
     public static boolean isEmpty() {
         return currentIndex == array.length;
