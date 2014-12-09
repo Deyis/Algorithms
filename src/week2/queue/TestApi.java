@@ -3,7 +3,7 @@ package week2.queue;
 /**
  * Created by Denis_Ivanchenko on 12/8/2014.
  */
-public class TestApp {
+public class TestApi {
 
     public static void main(String[] args) {
 
