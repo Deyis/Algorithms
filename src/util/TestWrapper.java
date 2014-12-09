@@ -13,6 +13,7 @@ public class TestWrapper {
                 .stream()
                 .filter(method -> method.isAnnotationPresent(TestMethod.class))
                 .forEach(method -> {
+                    System.out.println("Start method: " + method.getName());
                     try {
                         method.invoke(this);
                     } catch (Throwable e) {

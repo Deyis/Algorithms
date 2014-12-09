@@ -15,8 +15,12 @@ public class TestAllClasses implements TestApi {
             TestApiClasses annotation = (TestApiClasses) clazz.getAnnotation(TestApiClasses.class);
             for (Class testedClass: annotation.apiClasses()) {
                 try {
-                    System.out.println("Start testing: " + testedClass.getCanonicalName());
+                    System.out.println("------------------------------------------------------");
+                    System.out.println("Start testing class: " + testedClass.getCanonicalName());
+                    System.out.println("------------------------------------------------------");
                     testedClass.getMethod("runAll").invoke(testedClass.newInstance());
+                    System.out.println("------------------------------------------------------");
+                    System.out.println();
                 } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException |InstantiationException e) {
                     e.printStackTrace();
                 }
