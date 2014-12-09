@@ -36,8 +36,10 @@ public class UFTestWrapper extends TestWrapper {
         int[][] sets = StdInForUF.getConnected();
 
         for (int[] connected : sets) {
-            for (int j = 0; j < connected.length - 1; j++) {
-                assertTrue(uf.isConnected(connected[j], connected[j + 1]));
+            for (int i = 0; i < connected.length; i++) {
+                for (int j = 0; j < connected.length; j++) {
+                    assertTrue(uf.isConnected(connected[i], connected[j]));
+                }
             }
         }
 
