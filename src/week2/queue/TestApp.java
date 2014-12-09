@@ -7,8 +7,8 @@ public class TestApp {
 
     public static void main(String[] args) {
 
-        new QueueTestWrapper(NodeQueue<Integer>::new).runFullTest();
-        new QueueTestWrapper(ArrayQueue<Integer>::new).runFullTest();
+        new QueueTestWrapper(NodeQueue<Integer>::new).runAllTests();
+        new QueueTestWrapper(ArrayQueue<Integer>::new).runAllTests();
 
     }
 

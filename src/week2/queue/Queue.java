@@ -13,6 +13,7 @@ public interface Queue<T> extends Iterable<T>, Cloneable {
 
 
     Queue<T> clone();
+
     default Iterator<T> iterator() {
         return new Iterator<T>() {
             @Override

@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class TestWrapper {
 
-    public void runFullTest() {
+    public void runAllTests() {
         Arrays.asList(this.getClass().getDeclaredMethods())
                 .stream()
                 .filter(method -> method.isAnnotationPresent(TestMethod.class))
